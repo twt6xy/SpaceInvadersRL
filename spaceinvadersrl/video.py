@@ -1,6 +1,8 @@
 import os
 
 import gymnasium as gym
+import imageio
+import numpy as np
 from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.vec_env import DummyVecEnv, VecVideoRecorder
 
@@ -36,6 +38,22 @@ class ModelVideoRecorder:
         for _ in range(self.video_length + 1):
             action = [self.vec_env.action_space.sample()]
             obs, _, _, _ = self.vec_env.step(action)
+
+    def record_gif(self):
+        images = []
+        obs = self.model.env.reset()
+        img = self.model.env.render(mode="rgb_array")
+        for i in range(self.video_length):
+            images.append(img)
+            action, _ = self.model.predict(obs)
+            obs, _, _, _ = self.model.env.step(action)
+            img = self.model.env.render(mode="rgb_array")
+
+        imageio.mimsave(
+            f"{self.video_folder}/{self.model_type}-{self.env_id}.gif",
+            [np.array(img) for i, img in enumerate(images) if i % 2 == 0],
+            fps=29,
+        )
 
     def close(self):
         if self.vec_env is not None:
