@@ -8,11 +8,14 @@ from stable_baselines3.common.vec_env import DummyVecEnv, VecVideoRecorder
 
 
 class ModelVideoRecorder:
-    def __init__(self, model, video_folder, video_length, env_id, model_type):
+    def __init__(
+        self, model, video_folder, video_length, env_id, model_type, policy_type
+    ):
         self.model = model
         self.video_folder = video_folder
         self.video_length = video_length
         self.model_type = model_type
+        self.policy_type = policy_type
         self.env_id = env_id
         os.makedirs(self.video_folder, exist_ok=True)
         self.vec_env = None
@@ -50,7 +53,7 @@ class ModelVideoRecorder:
             img = self.model.env.render(mode="rgb_array")
 
         imageio.mimsave(
-            f"{self.video_folder}/{self.model_type}-{self.env_id}.gif",
+            f"{self.video_folder}/{self.model_type}-{self.env_id}-{self.policy_type}.gif",
             [np.array(img) for i, img in enumerate(images) if i % 2 == 0],
             fps=29,
         )
