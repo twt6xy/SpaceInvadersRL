@@ -6,9 +6,10 @@ This project is part of a reinforcement learning assignment where two different 
 
 Below are the demonstrations of the trained models, categorized by model type and the policy used:
 
-| Model Type | Policy Type  | Demonstration GIF  |
+| Model Type | Policy Type  | GIF  |
 |------------|--------------|--------------------|
-| DQN        | CNN Policy   | <p align="center"><img src="assets/gifs/DQN-SpaceInvadersNoFrameskip-v4-CnnPolicy.gif" alt="DQN Model Playing Space Invaders"></p> |
-| PPO        | CNN Policy   | <p align="center"><img src="assets/gifs/PPO-SpaceInvadersNoFrameskip-v4-CnnPolicy.gif" alt="PPO Model Playing Space Invaders with CNN Policy"></p> |
-| PPO        | CNN + LSTM Policy | <p align="center"><img src="assets/gifs/PPO-SpaceInvadersNoFrameskip-v4-CnnLstm.gif" alt="PPO Model Playing Space Invaders with CNN+LSTM Policy"></p> |
-| PPO        | MLP Policy   | <p align="center"><img src="assets/gifs/PPO-SpaceInvadersNoFrameskip-v4-MlpPolicy.gif" alt="PPO Model Playing Space Invaders with MLP Policy"></p> |
+| DQN        | CNN   | <p align="center"><img src="assets/gifs/DQN-SpaceInvadersNoFrameskip-v4-CnnPolicy.gif" alt="DQN Model Playing Space Invaders"></p> |
+| DQN        | MLP   | <p align="center"><img src="assets/gifs/DQN-SpaceInvadersNoFrameskip-v4-MlpPolicy.gif" alt="DQN Model Playing Space Invaders"></p> |
+| PPO        | CNN   | <p align="center"><img src="assets/gifs/PPO-SpaceInvadersNoFrameskip-v4-CnnPolicy.gif" alt="PPO Model Playing Space Invaders with CNN Policy"></p> |
+| PPO        | CNN+LSTM | <p align="center"><img src="assets/gifs/PPO-SpaceInvadersNoFrameskip-v4-CnnLstm.gif" alt="PPO Model Playing Space Invaders with CNN+LSTM Policy"></p> |
+| PPO        | MLP | <p align="center"><img src="assets/gifs/PPO-SpaceInvadersNoFrameskip-v4-MlpPolicy.gif" alt="PPO Model Playing Space Invaders with MLP Policy"></p> |
